@@ -14,3 +14,5 @@ npm start
 # 生成されたファイルを削除
 npm run clean
 
+# 変更検知
+npm run dev:watch
