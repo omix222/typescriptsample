@@ -87,4 +87,6 @@ console.log(reversed); // 3,2,1
 //reversed = ['1', '2']; // Error!
 
 reversed[0] = 1;       // Okay
+console.log(reversed);
 reversed = [1, 2];     // Okay
+console.log(reversed);
