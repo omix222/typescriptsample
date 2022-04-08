@@ -58,3 +58,33 @@ if(season == SEASONS.SUMMER){
 } else {
   console.log("夏ではないですね");
 }
+
+// 型が不明な値に型付けを行うことができます
+interface Person {
+    name: string;
+    age: number;
+}
+let foo = <Person>{}
+foo.name = "Yamada";    // 型アサーションが無いとエラーになる
+let bar = {} as Person
+bar.name = "Yamada";    // 型アサーションが無いとエラーになる
+
+//ジェネリクス
+function reverse<T>(items: T[]): T[] {
+    var toreturn = [];
+    for (let i = items.length - 1; i >= 0; i--) {
+        toreturn.push(items[i]);
+    }
+    return toreturn;
+}
+
+var sample = [1, 2, 3];
+var reversed = reverse(sample);
+console.log(reversed); // 3,2,1
+
+// Safety!
+//reversed[0] = '1';     // Error!
+//reversed = ['1', '2']; // Error!
+
+reversed[0] = 1;       // Okay
+reversed = [1, 2];     // Okay
